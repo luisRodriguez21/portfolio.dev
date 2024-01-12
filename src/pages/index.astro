@@ -1,11 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
 import SocialPill from '../components/SocialPill.astro';
+import Experience from '../components/Experience.astro';
+import Skills from '../components/Skills.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import MailIcon from '../components/icons/Mail.astro';
+import Briefcase from "../components/icons/Briefcase.astro"
+
 ---
 
 <Layout 
@@ -15,7 +18,7 @@ import MailIcon from '../components/icons/Mail.astro';
 	<main>
 		<section class="w-full mx-auto lg:w-[740px] py-44">
 
-			<h1 class="text-white opacity-90 text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">
+			<h1 class="text-white opacity-80 text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">
 				Hey, I'm Luis Rodríguez
 				<a 
 					href="https://www.linkedin.com/in/luis-rodriguez-mateos/" 
@@ -23,7 +26,7 @@ import MailIcon from '../components/icons/Mail.astro';
 					rel="noopener"
 					class="flex justify-center items-center"
 				>
-					<Badge>Available to work</Badge>
+					{ /* <Badge>Available to work</Badge> */ }
 				</a>
 			</h1>
 
@@ -32,7 +35,7 @@ import MailIcon from '../components/icons/Mail.astro';
 				I'm a <span class="text-yellow-200/90"> developer with 4 years of experience </span> from México 🇲🇽.
 				<span class="text-blue-300/75"> I've worked on frontend </span> projects using React, Vanilla JS, TypeScript.				 
 				<span class="text-red-300/90">In the backend </span>I've used Node JS, Java, Laravel and F3.
-				<span class="text-green-200/90">In mobile development</span> I've used React Native, as well <span class="text-purple-300/90">as databases</span> like MySQL, SQL Server, Oracle, and PostgreSQL. 
+				<span class="text-green-200/90">In mobile development</span> I've used React Native, as well as<span class="text-purple-300/90">databases like</span> MySQL, SQL Server, Oracle, and PostgreSQL. 
 			</h2>
 
 
@@ -50,6 +53,18 @@ import MailIcon from '../components/icons/Mail.astro';
 				  luis.rodriguez.mateos21@gmail.com
 				</SocialPill>
 			</nav>
+
+
+			<Skills />
+
+			<div id="experiencia">
+				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80" >
+					<Briefcase class="size-7" />
+				   	Experience
+				</h2>
+				<Experience />
+			</div>
+		  
 
 		</section>		
 	</main>

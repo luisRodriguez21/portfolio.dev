@@ -1,0 +1,35 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCIE = [
+  {
+    date: "March. 2023 - Present.",
+    title: "Imagixel | Backend Developer",
+    description: "Backend development with Node, Express, and PostgreSQL, using Heroku as a cloud services platform, and implementing AWS services like S3 to store multimedia content."
+  },
+  {
+    date: "Jan. 2020 - Feb. 2023",
+    title: "Softiux | Full Stack Developer",
+	description: "Development of web components and landing pages with React and Vanilla Js, in the backend, I used Laravel, Node, Python and Java using the MVC design pattern. Additionally, I managed MySQL, SQL Server, and Oracle databases to ensure effective data management.",
+  },
+  {
+    date: "Aug. 2021 - Dec. 2021",
+    title: "UTSEM | Web Developer",
+	description: "Maintenance and implementation of new modules in a CRM project developed with Laravel, the Laravel version was also migrated to a higher version.",
+  }, 
+  {
+    date: "Feb. 2019 - Dec. 2019",
+    title: "Nutrición del Campo | Web Developer",
+    description: "Maintenance and development of an interactive Kiosk using HTML, CSS, Javascript, Jquery, and Unity for renders. Also, the design and development of a landing page with WordPress.",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      	<li class="mb-10 ms-4">
+        	<ExperienceItem {...experiencie} />
+      	</li>
+    ))
+  }
+</ol>
