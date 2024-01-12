@@ -1,0 +1,81 @@
+---
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Javascript from "./icons/Javascript.astro"
+import Typescript from "./icons/Typescript.astro"
+import F3 from "./icons/F3.astro"
+
+
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "bg-[#dab92c] text-white",
+        icon: Javascript,
+    },
+    TYPESCRIPT: {
+        name: "Typescript",
+        class: "bg-[#086fbb] text-white",
+        icon: Typescript,
+    },
+    F3: {
+        name: "Fat Free",
+        class: "bg-black text-white",
+        icon: F3,
+    },
+}
+
+
+const PROJECTS = [
+    {
+        title: "LawHub - Control Jurídico",
+        description: "It is a system that manages and tracks court cases, we can upload documentation, send emails and add notes. The frontend was developed with Next, JWT, Tailwind CSS. The backend was developed with Typescript and Nest JS.",
+        image: "",
+        tags: [TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.TAILWIND ],
+    },
+    {
+        title: "Survey system",
+        description: "Website to survey companies worldwide and evaluate if it is a good place to work. Developed with Javascript and PHP using the F3 framework.",
+        image: "",
+        tags: [TAGS.JAVASCRIPT, TAGS.F3],
+    },
+]
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags }) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200/75 mb-2">
+        {title}
+      </h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
+            >
+              <tag.icon class="size-4" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}

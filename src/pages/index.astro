@@ -4,10 +4,13 @@ import Badge from '../components/Badge.astro';
 import SocialPill from '../components/SocialPill.astro';
 import Experience from '../components/Experience.astro';
 import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import SectionContainer from '../components/SectionContainer.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
 import MailIcon from '../components/icons/Mail.astro';
 import Briefcase from "../components/icons/Briefcase.astro"
+import CodeIcon from "../components/icons/Code.astro"
 
 ---
 
@@ -15,10 +18,16 @@ import Briefcase from "../components/icons/Briefcase.astro"
 	title="Luis Rodríguez | Backend Developer"
 	description="I'm a developer with 4 years of experience from México."
 >
-	<main>
-		<section class="w-full mx-auto lg:w-[740px] py-44">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32" id="about">
 
-			<h1 class="text-white opacity-80 text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">
+			<img 
+				src="/images/foto.webp" 
+				class="rounded-full size-12 mb-4"
+				alt="img-header"
+			> 
+
+			<h1 class="text-white  text-2xl lg:text-5xl font-bold flex flex-row gap-x-4 lg:pb-6 pb-8">
 				Hey, I'm Luis Rodríguez
 				<a 
 					href="https://www.linkedin.com/in/luis-rodriguez-mateos/" 
@@ -31,11 +40,11 @@ import Briefcase from "../components/icons/Briefcase.astro"
 			</h1>
 
 
-			<h2 class="text-xl opacity-80 text-wrap"> 
+			<h2 class="text-md lg:text-xl  text-wrap max-w-[700px]"> 
 				I'm a <span class="text-yellow-200/90"> developer with 4 years of experience </span> from México 🇲🇽.
 				<span class="text-blue-300/75"> I've worked on frontend </span> projects using React, Vanilla JS, TypeScript.				 
 				<span class="text-red-300/90">In the backend </span>I've used Node JS, Java, Laravel and F3.
-				<span class="text-green-200/90">In mobile development</span> I've used React Native, as well as<span class="text-purple-300/90">databases like</span> MySQL, SQL Server, Oracle, and PostgreSQL. 
+				<span class="text-green-200/90">In mobile development</span> I've used React Native, as well as <span class="text-purple-300/90">databases like</span> MySQL, SQL Server, Oracle, and PostgreSQL. 
 			</h2>
 
 
@@ -54,18 +63,25 @@ import Briefcase from "../components/icons/Briefcase.astro"
 				</SocialPill>
 			</nav>
 
-
 			<Skills />
+		</SectionContainer>	
 
-			<div id="experiencia">
-				<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-black/80 dark:text-white/80" >
-					<Briefcase class="size-7" />
-				   	Experience
-				</h2>
-				<Experience />
-			</div>
+
+		<SectionContainer id="experience">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80 " >
+				<Briefcase class="size-7" />
+				Experience
+			</h2>
+			<Experience />
+		</SectionContainer>
 		  
-
-		</section>		
+		<SectionContainer id="projects">			
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80 ">
+				<CodeIcon class="size-7" />
+				Proyectos
+		  	</h2>
+		  <Projects />
+		</SectionContainer>
+			
 	</main>
 </Layout>
