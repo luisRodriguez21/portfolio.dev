@@ -1,87 +1,93 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Experience from '../components/Experience.astro';
-import Skills from '../components/Skills.astro';
-import Projects from '../components/Projects.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import MailIcon from '../components/icons/Mail.astro';
-import Briefcase from "../components/icons/Briefcase.astro"
-import CodeIcon from "../components/icons/Code.astro"
-
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Experience from "../components/Experience.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/Code.astro";
 ---
 
-<Layout 
+<Layout
 	title="Luis Rodríguez | Backend Developer"
 	description="I'm a developer with 4 years of experience from México."
 >
 	<main class="px-4">
 		<SectionContainer class="py-44 pb-32" id="about">
-
-			<img 
-				src="/images/foto.webp" 
+			<img
+				src="/images/foto.webp"
 				class="rounded-full size-12 mb-4"
 				alt="img-header"
-			> 
+			/>
 
-			<h1 class="text-white  text-2xl lg:text-5xl font-bold flex flex-row gap-x-4 lg:pb-6 pb-8">
+			<h1
+				class="text-white text-2xl lg:text-5xl font-bold flex flex-row gap-x-4 lg:pb-6 pb-8"
+			>
 				Hey, I'm Luis Rodríguez
-				<a 
-					href="https://www.linkedin.com/in/luis-rodriguez-mateos/" 
-					target="_blank" 
+				<a
+					href="https://www.linkedin.com/in/luis-rodriguez-mateos/"
+					target="_blank"
 					rel="noopener"
 					class="flex justify-center items-center"
 				>
-					{ /* <Badge>Available to work</Badge> */ }
+					<Badge>Available to work</Badge>
 				</a>
 			</h1>
 
-
-			<h2 class="text-md lg:text-xl  text-wrap max-w-[700px]"> 
-				I'm a <span class="text-yellow-200/90"> developer with 4 years of experience </span> from México 🇲🇽.
-				<span class="text-blue-300/75"> I've worked on frontend </span> projects using React, Vanilla JS, TypeScript.				 
-				<span class="text-red-300/90">In the backend </span>I've used Node JS, Java, Laravel and F3.
-				<span class="text-green-200/90">In mobile development</span> I've used React Native, as well as <span class="text-purple-300/90">databases like</span> MySQL, SQL Server, Oracle, and PostgreSQL. 
+			<h2 class="text-md lg:text-xl text-wrap max-w-[700px]">
+				I'm a <span class="text-yellow-200/90">
+					developer with 4 years of experience
+				</span> from México 🇲🇽.
+				<span class="text-blue-300/75"> I've worked on frontend </span> projects
+				using React, Vanilla JS, TypeScript.
+				<span class="text-red-300/90">In the backend </span>I've used Node JS,
+				TypeScript, Nest JS, Java, Laravel and F3.
+				<span class="text-green-200/90">In mobile development</span> I've used React
+				Native, as well as <span class="text-purple-300/90">databases like</span
+				> MySQL, SQL Server, Oracle, Mongo DB and PostgreSQL.
 			</h2>
-
 
 			<nav class="flex gap-4 mt-8 flex-wrap">
 				<SocialPill href="https://www.linkedin.com/in/luis-rodriguez-mateos/">
-				  <LinkedInIcon class="size-4 md:size-6" />
-				   LinkedIn
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
 				</SocialPill>
 				<SocialPill href="https://github.com/luisRodriguez21">
-				  <GitHubIcon class="size-4 md:size-6" />
-				   GitHub
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
 				</SocialPill>
 				<SocialPill href="luis.rodriguez.mateos21@gmail.com">
-				  <MailIcon class="size-4 md:size-6" />
-				  luis.rodriguez.mateos21@gmail.com
+					<MailIcon class="size-4 md:size-6" />
+					luis.rodriguez.mateos21@gmail.com
 				</SocialPill>
 			</nav>
 
 			<Skills />
-		</SectionContainer>	
-
+		</SectionContainer>
 
 		<SectionContainer id="experience">
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80 " >
+			<h2
+				class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80"
+			>
 				<Briefcase class="size-7" />
 				Experience
 			</h2>
 			<Experience />
 		</SectionContainer>
-		  
-		<SectionContainer id="projects">			
-			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80 ">
+
+		<SectionContainer id="projects">
+			<h2
+				class="text-3xl font-semibold mb-6 flex gap-x-3 items-centertext-white/80"
+			>
 				<CodeIcon class="size-7" />
 				Proyectos
-		  	</h2>
-		  <Projects />
+			</h2>
+			<Projects />
 		</SectionContainer>
-			
 	</main>
 </Layout>
