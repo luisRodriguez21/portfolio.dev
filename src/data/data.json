@@ -1,4 +1,9 @@
 {
   "welcome": "Hi, I'm Luis Rodriguez",
+<<<<<<< Updated upstream
   "description": "I'm a developer with 4 years of experience from México 🇲🇽. I've worked on frontend projects using React, Vanilla JS, TypeScript. In the backend I've used Node JS, TypeScript, Nest JS, Java, Laravel and F3. In mobile development I've used React Native, as well as databases like MySQL, SQL Server, Oracle, Mongo DB and PostgreSQL."
 }
+=======
+  "description": "I'm a Senior Backend Developer with 7 years of experience from México 🇲🇽, building products for national and international companies with Node.js, TypeScript, NestJS, Express, Python, PostgreSQL, React and React Native."
+}
+>>>>>>> Stashed changes

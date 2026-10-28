@@ -5,77 +5,111 @@ import Javascript from "./icons/Javascript.astro"
 import Typescript from "./icons/Typescript.astro"
 import F3 from "./icons/F3.astro"
 
+type Tag = { name: string; class: string; icon?: any }
 
-const TAGS = {
-    NEXT: {
-        name: "Next.js",
-        class: "bg-black text-white",
-        icon: NextJS,
-    },
-    TAILWIND: {
-        name: "Tailwind CSS",
-        class: "bg-[#003159] text-white",
-        icon: Tailwind,
-    },
-    JAVASCRIPT: {
-        name: "Javascript",
-        class: "bg-[#dab92c] text-white",
-        icon: Javascript,
-    },
-    TYPESCRIPT: {
-        name: "Typescript",
-        class: "bg-[#086fbb] text-white",
-        icon: Typescript,
-    },
-    F3: {
-        name: "Fat Free",
-        class: "bg-black text-white",
-        icon: F3,
-    },
+const TAGS: Record<string, Tag> = {
+    NEXT: { name: "Next.js", class: "bg-black text-white", icon: NextJS },
+    TAILWIND: { name: "Tailwind CSS", class: "bg-[#003159] text-white", icon: Tailwind },
+    JAVASCRIPT: { name: "JavaScript", class: "bg-[#dab92c] text-white", icon: Javascript },
+    TYPESCRIPT: { name: "TypeScript", class: "bg-[#086fbb] text-white", icon: Typescript },
+    F3: { name: "Fat-Free", class: "bg-black text-white", icon: F3 },
+    NODE: { name: "Node.js", class: "bg-[#2f6b2f] text-white" },
+    EXPRESS: { name: "Express", class: "bg-neutral-800 text-white" },
+    POSTGRES: { name: "PostgreSQL", class: "bg-[#336791] text-white" },
+    PRISMA: { name: "Prisma", class: "bg-[#1b2b45] text-white" },
+    REACT: { name: "React", class: "bg-[#0b3a4a] text-[#61dafb]" },
+    REACT_NATIVE: { name: "React Native", class: "bg-[#0b3a4a] text-[#61dafb]" },
+    AWS: { name: "AWS", class: "bg-[#232f3e] text-[#ff9900]" },
+    HEROKU: { name: "Heroku", class: "bg-[#430098] text-white" },
+    VERCEL: { name: "Vercel", class: "bg-black text-white" },
+    STRIPE: { name: "Stripe", class: "bg-[#635bff] text-white" },
+    TELEGRAM: { name: "Telegram API", class: "bg-[#229ed9] text-white" },
+    PHP: { name: "PHP", class: "bg-[#4f5b93] text-white" },
+    AI: { name: "AI / LLMs", class: "bg-[#3b2a6b] text-white" },
+    PROMPT: { name: "Prompt engineering", class: "bg-[#2a2a3b] text-white" },
 }
-
 
 const PROJECTS = [
     {
-        title: "LawHub - Control Jurídico",
-        description: "It is a system that manages and tracks court cases, we can upload documentation, send emails and add notes. The frontend was developed with Next, JWT, Tailwind CSS. The backend was developed with Typescript and Nest JS.",
-        image: "",
-        tags: [TAGS.TYPESCRIPT, TAGS.NEXT, TAGS.TAILWIND ],
+        title: "TROBBU · Fractional Ownership Platform",
+        badge: "Senior Backend",
+        description: "Platform where owners buy fractions of luxury villas in Mexico and Europe, book their stays, swap weeks and manage payments. I build the backend: APIs and data models for the business modules and the admin panel, plus integrations for payments, messaging, email, push notifications and AI-powered translations.",
+        image: "/images/projects/trobbu-web.webp",
+        tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRES, TAGS.STRIPE, TAGS.AWS, TAGS.HEROKU],
     },
     {
-        title: "Survey system",
-        description: "Website to survey companies worldwide and evaluate if it is a good place to work. Developed with Javascript and PHP using the F3 framework.",
-        image: "",
-        tags: [TAGS.JAVASCRIPT, TAGS.F3],
+        title: "TROBBU · Mobile App",
+        badge: "Contributor",
+        description: "Mobile app where owners explore destinations, reserve fractions and manage their weeks and swaps. I contribute to the API and the features the app consumes.",
+        image: "/images/projects/trobbu-app.webp",
+        tags: [TAGS.REACT_NATIVE, TAGS.NODE, TAGS.POSTGRES],
+    },
+    {
+        title: "BdocOne · Medical Appointments",
+        badge: "Freelance",
+        description: "Backend for a healthcare platform to book and manage medical appointments, payments and clinic administration, with role-based access and automatic reminders by email and WhatsApp.",
+        image: "/images/projects/bdocone.webp",
+        tags: [TAGS.TYPESCRIPT, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRES, TAGS.VERCEL],
+    },
+    {
+        title: "Áurea · Jewelry CRM",
+        badge: "Full Stack",
+        description: "End-to-end CRM for a gold and silver jewelry business: sales by channel, clients, products, suppliers, wholesale price tiers and live metal prices refreshed automatically every hour.",
+        image: "/images/projects/aurea-crm.webp",
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.NODE, TAGS.PRISMA, TAGS.POSTGRES, TAGS.TAILWIND],
+    },
+    {
+        title: "HoyFit · Fitness & Nutrition",
+        badge: "In progress",
+        description: "Mobile-first app that shows what you have to eat and train today. Swap or add meals and get the calories calculated, log extra activities, track your daily balance, goals and progress, and receive reminders on Telegram.",
+        image: "/images/projects/hoyfit.webp",
+        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.PRISMA, TAGS.POSTGRES, TAGS.TELEGRAM],
+    },
+    {
+        title: "English Coach · AI-powered practice",
+        badge: "Personal",
+        description: "My own AI-assisted English program: daily readings by level, written summaries with instant corrections, slow-paced speaking practice and a feedback log with mistakes, pronunciation and what to practice next.",
+        image: "/images/projects/english-coach.webp",
+        tags: [TAGS.AI, TAGS.PROMPT],
+    },
+    {
+        title: "Workplace Survey Platform · Great Place to Work®",
+        badge: "Softiux",
+        description: "Survey platform for Great Place to Work® to evaluate companies worldwide as workplaces: employees answer the survey and the results measure how good a place to work each company is.",
+        image: "/images/projects/survey-platform.webp",
+        tags: [TAGS.JAVASCRIPT, TAGS.PHP, TAGS.F3],
     },
 ]
 ---
 
+<div class="grid md:grid-cols-2 gap-x-10 gap-y-14">
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200/75 mb-2">
-        {title}
-      </h3>
-      <p class="text-lg mb-4 text-pretty">{description}</p>
-      <ul class="flex gap-x-2 flex-row mb-2">
+  PROJECTS.map(({ image, title, badge, description, tags }, i) => (
+    <article class={`flex flex-col ${i === 0 ? 'md:col-span-2' : ''}`}>
+      <img
+        loading="lazy"
+        class="rounded-xl shadow-2xl shadow-white/5 border border-white/10 aspect-video object-cover mb-5 transition duration-300 hover:scale-[1.02]"
+        src={image}
+        alt={`Screenshot of ${title}`}
+        width="1600"
+        height="900"
+      />
+      <div class="flex items-center gap-x-3 mb-2 flex-wrap">
+        <h3 class="text-xl font-semibold text-yellow-200/75">{title}</h3>
+        <span class="text-xs rounded-full px-2 py-0.5 border border-white/15 text-white/70">{badge}</span>
+      </div>
+      <p class="text-base mb-4 text-pretty text-gray-200">{description}</p>
+      <ul class="flex gap-2 flex-wrap mt-auto">
         {tags.map((tag) => (
           <li>
-            <span
-              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 border border-white/10`}
-            >
-              <tag.icon class="size-4" />
+            <span class={`flex items-center gap-x-1.5 rounded-full text-xs ${tag.class} py-1 px-2.5 border border-white/10`}>
+              {tag.icon && <tag.icon class="size-4" />}
               {tag.name}
             </span>
           </li>
         ))}
       </ul>
-      <img
-        loading="lazy"
-        class="rounded shadow-2xl shadow-white/10 aspect-video"
-        src={image}
-        alt={`Captura de pantalla del proyecto ${image}`}
-      />
     </article>
   ))
 }
+</div>
